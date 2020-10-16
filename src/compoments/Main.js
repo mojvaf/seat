@@ -1,9 +1,17 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 
  const Main=()=> {
-
+  const [toggled,setToggle]= useState()
+  
+  const[count,setCount]= useState(1)
     
+  const toggle = ()=> {
 
+    setToggle(!toggled)
+}
+  
+  
+ 
     return (
         <div className='man'>
             <div className='movie-container'>
@@ -30,8 +38,8 @@ import React from 'react'
             <div className='container'>
                 <div className='screen'></div>
                 <div className='row'>
-                    <div className='seat'></div>
-                    <div className='seat'></div>
+                <div  onClick={toggle}>{toggled? <div className='seat selected'></div>:<div className='seat'></div>}</div>
+                <div className='seat'></div>
                     <div className='seat'></div>
                     <div className='seat occupied'></div>
                     <div className='seat occupied'></div>
